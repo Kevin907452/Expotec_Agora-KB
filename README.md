@@ -40,6 +40,12 @@ npm install --save-dev webpack webpack-cli webpack-dev-server babel-loader @babe
 # Iniciar la aplicación frontend
 npm start
 ```
+🗄️ 3. Configuración de la Base de Datos
+
+Este proyecto utiliza **PostgreSQL**. Dentro de la carpeta `backend/` te dejamos el diseño de la base de datos listo para usar de dos formas diferentes. Elige la que prefieras al descargar el proyecto:
+
+* **Opción A (Copiar y pegar - Recomendado):** Abre el archivo `backend/agoraexpo.sql`, copia todo su contenido de texto y ejecútalo en la consola de consultas (Query Tool) de tu pgAdmin.
+* **Opción B (Restaurar archivo):** Si gustas de restaurar el archivo binario completo, crea una base de datos vacía llamada `agora`, haz clic derecho sobre ella en pgAdmin, selecciona **Restore** y carga el archivo `backend/agoraexpo.sql`.
 
 🛠️ Tecnologías y Dependencias Clave
 
