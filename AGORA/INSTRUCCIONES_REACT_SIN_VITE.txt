@@ -1,0 +1,15 @@
+ÁGORA: React sin Vite (Webpack + Babel)
+
+1. Abre una terminal en agoraya/AGORA
+2. npm install
+3. npm start
+4. La página se abre en http://localhost:5173
+
+Para compilar: npm run build
+
+El backend está en ../backend y mantiene su configuración y PostgreSQL sin cambios.
+En otra terminal: cd ../backend y npm install && npm start (revisa el script de backend).
+
+Se excluyó node_modules del ZIP porque se reinstala con npm install.
+No se cambiaron componentes, rutas, estilos ni el backend.
+Los módulos siguen configurados en src/data/modulos.js; su persistencia en PostgreSQL es una tarea independiente pendiente.

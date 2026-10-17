@@ -1,0 +1,686 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  font-family: "League Spartan", sans-serif;
+}
+body{
+  background-color: #f1f3ff;
+}
+.navbar-estudiante {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distribuye espacio entre logo, enlaces y perfil */
+  font-family: "League Spartan", sans-serif;
+  padding: 0 40px;
+  background-color: #eee7f5;
+  box-sizing: border-box;
+  box-shadow: 3px 2px 22px 3px rgba(28, 0, 168, 0.322);
+  -webkit-box-shadow: 3px 2px 22px 3px rgba(28, 0, 168, 0.26);
+}
+
+/* =====================================================
+   AGORITA INSANAAA
+   ===================================================== */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 60px;
+}
+
+.navbar-logo img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.navbar-logo span {
+  font-family: "League Spartan", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #9571dd;
+}
+
+/* =====================================================
+   LOS ICONS Y LAS ETIQUETAS
+   ===================================================== */
+
+.navbar-links {
+  display: flex;
+  flex: 0.7;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+  padding: 8px 12px;
+
+  text-decoration: none;
+
+  font-family: "League Spartan", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+
+  color: #4a386d;
+
+  border-radius: 12px;
+
+  transition: 0.2s ease;
+}
+
+/* =====================================================
+   HOVER AESTHETIC YK2
+   ===================================================== */
+
+.nav-item:hover {
+  color: #7d67ec;
+  background-color: rgba(204, 180, 238, 0.623);
+  height: 60px;
+}
+
+/* =====================================================
+   ICONOS
+   ===================================================== */
+
+.nav-item animated-icons {
+  width: 45px;
+  height: 45px;
+
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.nav-item animated-icons * {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* =====================================================
+   BOTÓN HAMBURGUESA
+   ===================================================== */
+
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+}
+
+.hamburger-btn span {
+  width: 100%;
+  height: 3px;
+  background-color: #4a386d;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+  .navbar-estudiante {
+    padding: 0 20px;
+    position: relative;
+  }
+
+  .navbar-logo {
+    margin-right: 25px;
+  }
+
+ 
+  .hamburger-btn {
+    display: flex;
+  }
+
+
+  .navbar-links {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #eee7f5;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+    gap: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 15px rgba(28, 0, 168, 0.15);
+
+    /* Oculto por defecto */
+    display: none;
+    flex: initial;
+    margin-left: 0;
+    z-index: 999;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .nav-item {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  
+  .nav-item span {
+    display: inline-block;
+  }
+
+  
+  .hamburger-btn.active span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+  }
+
+  .hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-btn.active span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+  }
+
+  .navbar-profile .profile-info {
+    display: none;
+  }
+}
+
+.seccion-tres-columnas {
+  display: flex;
+  margin-top: 80px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 50px auto 20px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+.columna-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 80px;
+  padding: 24px 20px;
+  background-color: #faf8fc;
+  border-radius: 20px;
+  border: 1px solid #f0ecf9;
+  box-shadow: 0 6px 18px rgba(74, 56, 109, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.columna-item animated-icons {
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.columna-item:hover {
+  transform: translateY(-4px);
+}
+
+.columna-item h2 {
+  color: #4a2768;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-family: "League Spartan", sans-serif;
+}
+
+.columna-item p {
+  color: #584975;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 400;
+  font-family: "League Spartan", sans-serif;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .seccion-tres-columnas {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+/* ═══════════════════════════════════════════════════════════
+   PERFIL EN NAVBAR
+   ═══════════════════════════════════════════════════════════ */
+
+.nav-perfil {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  border-left: 1px solid rgba(149, 113, 221, 0.15);
+}
+
+@media (max-width: 900px) {
+  .nav-perfil {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 8px;
+    border-top: 1px solid rgba(149, 113, 221, 0.15);
+  }
+}
+/* ═══════════════════════════════════════════════════════════
+   NAVBAR — Botón Revisar (solo profesor)
+   ═══════════════════════════════════════════════════════════ */
+
+.nav-item-revisar {
+  background: linear-gradient(135deg, rgba(141, 123, 232, 0.1), rgba(193, 255, 244, 0.1));
+  border: 1px solid rgba(141, 123, 232, 0.25);
+  color: #6b4f8c !important;
+}
+
+.nav-item-revisar:hover {
+  background: linear-gradient(135deg, rgba(141, 123, 232, 0.2), rgba(193, 255, 244, 0.2)) !important;
+  color: #5a3d78 !important;
+}
+/* ═══════════════════════════════════════════════════════════
+   NAVBAR — Botón "Tengo código"
+   ═══════════════════════════════════════════════════════════ */
+.nav-item-codigo {
+  background: linear-gradient(135deg, rgba(141, 123, 232, 0.1), rgba(193, 255, 244, 0.1));
+  border: 1px solid rgba(141, 123, 232, 0.25);
+  color: #6b4f8c !important;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.nav-item-codigo:hover {
+  background: linear-gradient(135deg, rgba(141, 123, 232, 0.2), rgba(193, 255, 244, 0.2)) !important;
+  color: #5a3d78 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MODAL TENGO CÓDIGO
+   ═══════════════════════════════════════════════════════════ */
+.modal-codigo-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(74, 56, 109, 0.5);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 2000;
+}
+
+.modal-codigo {
+  position: relative;
+  background: #fef8ed;
+  border-radius: 28px;
+  padding: 40px 32px 32px;
+  max-width: 440px;
+  width: 100%;
+  box-shadow: 0 25px 60px rgba(74, 56, 109, 0.25);
+  text-align: center;
+}
+
+.modal-codigo-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(195, 179, 237, 0.2);
+  color: #4a386d;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.modal-codigo-close:hover {
+  background: rgba(195, 179, 237, 0.4);
+  transform: rotate(90deg);
+}
+
+.modal-codigo-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #8d7be8, #7d67ec);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 8px 24px rgba(141, 123, 232, 0.35);
+}
+
+.modal-codigo h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #4a386d;
+  margin: 0 0 10px 0;
+}
+
+.modal-codigo p {
+  font-size: 14.5px;
+  color: #675b82;
+  margin: 0 0 24px 0;
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.modal-codigo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-codigo-form input {
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 2px solid rgba(195, 179, 237, 0.3);
+  background: white;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-align: center;
+  color: #4a386d;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.modal-codigo-form input:focus {
+  border-color: #8d7be8;
+  box-shadow: 0 0 0 4px rgba(141, 123, 232, 0.15);
+}
+
+.modal-codigo-form input::placeholder {
+  color: #a99bc4;
+  letter-spacing: normal;
+  font-weight: 500;
+}
+
+.modal-codigo-form button {
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #8d7be8, #7d67ec);
+  color: white;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 6px 20px rgba(141, 123, 232, 0.3);
+}
+
+.modal-codigo-form button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(141, 123, 232, 0.45);
+}
+
+.modal-codigo-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+  .nav-item-codigo {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+/* ═══════════════════════════════════════════════════════════
+   PREVIEW PARTIDOS EN INICIO (REDISEÑADO)
+   ═══════════════════════════════════════════════════════════ */
+.pv-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 24px;
+}
+
+.pv-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.pv-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #8d7be8;
+  background: rgba(141, 123, 232, 0.1);
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.pv-header h2 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #4a386d;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.pv-header p {
+  font-size: 15px;
+  color: #675b82;
+  margin: 0;
+  font-weight: 500;
+}
+
+.pv-loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: #8b7ba8;
+  font-weight: 600;
+}
+
+.pv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+  perspective: 1000px;
+}
+
+.pv-card {
+  position: relative;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(74, 56, 109, 0.08);
+  border: 1px solid rgba(195, 179, 237, 0.2);
+  cursor: pointer;
+  transition: box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.pv-card:hover {
+  box-shadow: 0 20px 40px rgba(141, 123, 232, 0.2);
+}
+
+/* Franja de colores */
+.pv-color-bar {
+  height: 6px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Imagen */
+.pv-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: #f8f6fc;
+}
+
+.pv-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pv-card:hover .pv-image {
+  transform: scale(1.08);
+}
+
+.pv-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 56px;
+  font-weight: 800;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pv-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  color: #4a386d;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(195, 179, 237, 0.3);
+}
+
+/* Contenido */
+.pv-body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.pv-nombre {
+  font-size: 18px;
+  font-weight: 800;
+  color: #4a386d;
+  margin: 0;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pv-desc {
+  font-size: 13px;
+  color: #675b82;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pv-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(195, 179, 237, 0.15);
+  font-size: 12px;
+  color: #8b7ba8;
+  font-weight: 600;
+}
+
+.pv-stat strong {
+  color: #4a386d;
+  font-weight: 800;
+}
+
+.pv-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #c4b8e8;
+}
+
+/* Botón ver todos */
+.pv-ver-todos {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #8d7be8 0%, #7d67ec 100%);
+  color: white;
+  font-family: "League Spartan", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 6px 20px rgba(141, 123, 232, 0.3);
+  margin: 0 auto;
+  width: fit-content;
+  display: flex;
+}
+
+.pv-ver-todos:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(141, 123, 232, 0.45);
+}
+
+.pv-ver-todos span {
+  transition: transform 0.25s ease;
+}
+
+.pv-ver-todos:hover span {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .pv-header h2 {
+    font-size: 28px;
+  }
+  .pv-grid {
+    grid-template-columns: 1fr;
+  }
+  .pv-image-wrap {
+    height: 160px;
+  }
+}

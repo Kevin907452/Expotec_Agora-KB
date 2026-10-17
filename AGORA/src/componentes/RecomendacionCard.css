@@ -1,0 +1,621 @@
+/* agoraya/AGORA/src/componentes/RecomendacionCard.css */
+
+.rc-card {
+  background: #fef8ed;
+  border-radius: 24px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(195, 179, 237, 0.25);
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 12px rgba(141, 123, 232, 0.06);
+  break-inside: avoid;
+  margin-bottom: 18px;
+}
+
+.rc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(141, 123, 232, 0.12);
+  border-color: rgba(227, 179, 237, 0.5);
+}
+
+.rc-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 18px 12px;
+}
+
+.rc-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.rc-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e3b3ed 0%, #b3bbde 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  color: white;
+  font-weight: 800;
+  font-size: 15px;
+  position: relative;
+}
+
+.rc-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rc-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8d7be8, #c1fff4);
+  color: white;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  border: 2px solid #fef8ed;
+}
+
+.rc-user-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.rc-nombre {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #4a386d;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rc-meta {
+  font-family: "League Spartan", sans-serif;
+  font-size: 12px;
+  color: #8b7ba8;
+  margin: 3px 0 0 0;
+  font-weight: 500;
+}
+
+.rc-save-btn {
+  display: flex;
+  background: transparent;
+  border: none;
+  color: #a99bc4;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+.rc-save-btn:hover {
+  background: rgba(193, 255, 244, 0.3);
+  color: #8d7be8;
+}
+
+.rc-save-btn.saved {
+  color: #8d7be8;
+}
+
+.rc-menu-wrapper {
+  position: relative;
+}
+
+.rc-menu-btn {
+  background: transparent;
+  border: none;
+  color: #a99bc4;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 10px;
+  display: flex;
+  transition: all 0.2s;
+}
+
+.rc-menu-btn:hover {
+  background: rgba(227, 179, 237, 0.15);
+  color: #8d7be8;
+}
+
+.rc-menu-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  background: #fef8ed;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(141, 123, 232, 0.2);
+  border: 1px solid rgba(195, 179, 237, 0.3);
+  min-width: 150px;
+  z-index: 20;
+  overflow: hidden;
+  animation: rc-menuFade 0.2s ease;
+}
+
+@keyframes rc-menuFade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rc-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  color: #4a386d;
+  font-family: "League Spartan", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  text-align: left;
+}
+
+.rc-menu-item:hover {
+  background: rgba(227, 179, 237, 0.15);
+}
+
+.rc-menu-danger {
+  color: #d9707e;
+}
+
+.rc-menu-danger:hover {
+  background: rgba(217, 112, 126, 0.1);
+}
+
+.rc-content {
+  padding: 4px 18px 14px;
+  flex: 1;
+}
+
+.rc-comentario {
+  font-family: "League Spartan", sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #4a386d;
+  margin: 0;
+  word-wrap: break-word;
+  font-weight: 500;
+  white-space: pre-wrap;
+}
+
+.rc-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rc-edit textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid rgba(227, 179, 237, 0.4);
+  background: white;
+  font-family: "League Spartan", sans-serif;
+  font-size: 14px;
+  color: #4a386d;
+  resize: vertical;
+  min-height: 80px;
+  box-sizing: border-box;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.rc-edit textarea:focus {
+  border-color: #e3b3ed;
+  box-shadow: 0 0 0 3px rgba(227, 179, 237, 0.15);
+}
+
+.rc-edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.rc-edit-cancel,
+.rc-edit-save {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 10px;
+  border: none;
+  font-family: "League Spartan", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rc-edit-cancel {
+  background: rgba(139, 123, 168, 0.1);
+  color: #8b7ba8;
+}
+
+.rc-edit-cancel:hover {
+  background: rgba(139, 123, 168, 0.2);
+}
+
+.rc-edit-save {
+  background: linear-gradient(135deg, #8d7be8 0%, #b3bbde 100%);
+  color: white;
+  box-shadow: 0 3px 10px rgba(141, 123, 232, 0.3);
+}
+
+.rc-edit-save:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(141, 123, 232, 0.4);
+}
+
+.rc-confirm-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 18px 14px;
+}
+
+.rc-confirm-cancel {
+  background: transparent;
+  border: none;
+  color: #8b7ba8;
+  font-family: "League Spartan", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.rc-confirm-cancel:hover {
+  background: rgba(139, 123, 168, 0.1);
+}
+
+.rc-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px 14px;
+  border-top: 1px solid rgba(195, 179, 237, 0.15);
+  gap: 8px;
+}
+
+.rc-actions-left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rc-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  color: #8b7ba8;
+  font-family: "League Spartan", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rc-action-btn:hover {
+  background: rgba(193, 255, 244, 0.3);
+  color: #4a386d;
+}
+
+.rc-action-btn.active {
+  background: rgba(193, 255, 244, 0.4);
+  color: #4a386d;
+}
+
+.rc-comments {
+  border-top: 1px solid rgba(195, 179, 237, 0.15);
+  background: linear-gradient(180deg, rgba(227, 179, 237, 0.03) 0%, rgba(193, 255, 244, 0.03) 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.rc-comments-header {
+  padding: 12px 18px 8px;
+  border-bottom: 1px solid rgba(195, 179, 237, 0.12);
+}
+
+.rc-comments-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #4a386d;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.rc-comments-title svg {
+  color: #8d7be8;
+}
+
+.rc-comments-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 10px;
+  background: rgba(227, 179, 237, 0.2);
+  color: #8d7be8;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.rc-comments-body {
+  padding: 14px 18px 6px;
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.rc-comments-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.rc-comments-body::-webkit-scrollbar-thumb {
+  background: rgba(195, 179, 237, 0.4);
+  border-radius: 5px;
+}
+
+.rc-comments-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px 16px;
+  color: #8b7ba8;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.rc-comments-empty {
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.rc-comments-empty p {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #4a386d;
+}
+
+.rc-comments-empty span {
+  font-size: 12.5px;
+  color: #a99bc4;
+  font-weight: 500;
+}
+
+.rc-comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 8px;
+}
+
+.rc-comment {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.rc-comment-other {
+  align-self: flex-start;
+  justify-content: flex-start;
+}
+
+.rc-comment-mine {
+  align-self: flex-end;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+
+.rc-comment-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #b3bbde 0%, #c1fff4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  color: #4a386d;
+  font-size: 10.5px;
+  font-weight: 800;
+  border: 2px solid #fef8ed;
+  align-self: flex-end;
+}
+
+.rc-comment-avatar-mine {
+  background: linear-gradient(135deg, #e3b3ed 0%, #8d7be8 100%);
+  color: white;
+}
+
+.rc-comment-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rc-comment-bubble {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 78%;
+  padding: 8px 12px 6px;
+  border-radius: 14px;
+  word-wrap: break-word;
+}
+
+.rc-comment-other .rc-comment-bubble {
+  background: #fef8ed;
+  border: 1px solid rgba(195, 179, 237, 0.25);
+  border-bottom-left-radius: 4px;
+}
+
+.rc-comment-mine .rc-comment-bubble {
+  background: linear-gradient(135deg, #e3b3ed 0%, #b3bbde 100%);
+  color: white;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 2px 8px rgba(227, 179, 237, 0.3);
+}
+
+.rc-comment-name {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #8d7be8;
+  margin-bottom: 2px;
+}
+
+.rc-comment-text {
+  font-size: 13.5px;
+  color: #4a386d;
+  margin: 0;
+  line-height: 1.45;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.rc-comment-mine .rc-comment-text {
+  color: white;
+}
+
+.rc-comment-time {
+  font-size: 10px;
+  color: #a99bc4;
+  font-weight: 600;
+  align-self: flex-end;
+  margin-top: 2px;
+}
+
+.rc-comment-mine .rc-comment-time {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rc-comment-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px 16px;
+  border-top: 1px solid rgba(195, 179, 237, 0.12);
+  background: rgba(254, 248, 237, 0.5);
+}
+
+.rc-comment-form-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e3b3ed 0%, #b3bbde 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+  border: 2px solid #fef8ed;
+}
+
+.rc-comment-form-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rc-comment-form input {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(195, 179, 237, 0.3);
+  background: #fef8ed;
+  font-family: inherit;
+  font-size: 13.5px;
+  color: #4a386d;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.rc-comment-form input::placeholder {
+  color: #a99bc4;
+  font-weight: 500;
+}
+
+.rc-comment-form input:focus {
+  border-color: #e3b3ed;
+  box-shadow: 0 0 0 4px rgba(227, 179, 237, 0.15);
+  background: white;
+}
+
+.rc-comment-form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #8d7be8 0%, #b3bbde 100%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(141, 123, 232, 0.25);
+}
+
+.rc-comment-form button:hover:not(:disabled) {
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 4px 14px rgba(141, 123, 232, 0.4);
+}
+
+.rc-comment-form button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.spin {
+  animation: rc-spin 1s linear infinite;
+}
+
+@keyframes rc-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,222 @@
+/* agoraya/AGORA/src/componentes/MenuPerfil.css */
+
+.mp-wrap {
+  --morado: #4a386d;
+  --lila: #9571dd;
+  --violeta: #7d67ec;
+  --lavanda: #eee7f5;
+  --rosa: #e3b3ed;
+  --linea: #e3daef;
+  --suave: #675b82;
+
+  position: relative;
+  font-family: "League Spartan", sans-serif;
+  z-index: 1000;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TRIGGER (pelotita)
+   ═══════════════════════════════════════════════════════════ */
+.mp-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px 4px 4px;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.mp-trigger:hover {
+  background: rgba(149, 113, 221, 0.1);
+  border-color: rgba(149, 113, 221, 0.3);
+}
+
+.mp-avatar-iniciales {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e3b3ed 0%, #9571dd 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 15px;
+  box-shadow: 0 4px 12px rgba(149, 113, 221, 0.3);
+  flex-shrink: 0;
+}
+
+.mp-avatar-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 4px 12px rgba(149, 113, 221, 0.3);
+  flex-shrink: 0;
+}
+
+.mp-chevron {
+  color: var(--suave);
+  transition: transform 0.25s ease;
+}
+
+.mp-chevron--open {
+  transform: rotate(180deg);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MENÚ DESPLEGABLE
+   ═══════════════════════════════════════════════════════════ */
+.mp-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  min-width: 280px;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid var(--linea);
+  box-shadow: 0 20px 50px rgba(74, 56, 109, 0.18),
+              0 4px 12px rgba(74, 56, 109, 0.08);
+  overflow: hidden;
+}
+
+/* Header del menú */
+.mp-header {
+  display: flex;
+  gap: 12px;
+  padding: 18px;
+  background: linear-gradient(135deg, rgba(227, 179, 237, 0.15) 0%, rgba(193, 255, 244, 0.15) 100%);
+  align-items: center;
+}
+
+.mp-header-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e3b3ed 0%, #9571dd 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(149, 113, 221, 0.3);
+  overflow: hidden;
+}
+
+.mp-header-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mp-header-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.mp-header-nombre {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--morado);
+  margin: 0 0 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mp-header-correo {
+  font-size: 12px;
+  color: var(--suave);
+  margin: 0 0 6px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+.mp-header-rol {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.mp-rol-estudiante {
+  background: rgba(149, 113, 221, 0.15);
+  color: var(--lila);
+}
+
+.mp-rol-profesor {
+  background: rgba(193, 255, 244, 0.5);
+  color: #2d7a52;
+}
+
+.mp-rol-administrador {
+  background: rgba(240, 193, 92, 0.25);
+  color: #b8801e;
+}
+
+/* Separador */
+.mp-sep {
+  height: 1px;
+  background: var(--linea);
+  margin: 0;
+}
+
+/* Items */
+.mp-items {
+  padding: 8px;
+}
+
+.mp-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  color: var(--morado);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  border: none;
+  background: transparent;
+  width: 100%;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+}
+
+.mp-item:hover {
+  background: var(--lavanda);
+  color: var(--lila);
+}
+
+.mp-item-danger {
+  color: #dc2626;
+}
+
+.mp-item-danger:hover {
+  background: rgba(220, 38, 38, 0.1);
+  color: #b91c1c;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .mp-menu {
+    min-width: 260px;
+    right: -8px;
+  }
+}
